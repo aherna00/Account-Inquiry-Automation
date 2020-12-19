@@ -1,2 +1,2 @@
 # Account-Inquiry-Automation
-Python Script automates the daily process of checking investment accounts for cash available to invest at multiple custodians 
+Python program automates the daily process of checking managed investment accounts at Facet Wealth (RIA) for cash available to invest or settled securities at Fidelity (custodian).
