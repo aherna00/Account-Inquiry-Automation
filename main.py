@@ -21,8 +21,7 @@ print(fidelity_accounts)
 
 
 # check all accounts for funded balance
-# # checks if cash balance is settled
-#
+
 def search(pending):
     for i in pending:
         driver.find_element_by_xpath \
