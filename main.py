@@ -36,16 +36,18 @@ def search(pending):
                 "/html/body/div/ui-view/fip-basis-layout-portal-container/div/div/div/fip-side-bar-item-panel/div[1]/div[2]/fip-unified-access-layer/unified-access-layer/div/unified-access-layer/div/div[1]/unified-access-layer-search-bar-sidebar/div/div/div/div/div/div[1]/div/span[5]/button")
         search_click.click()
         time.sleep(3)
-        balance_button = WebDriverWait(driver, 60).until(
-            EC.element_to_be_clickable((By.ID, "account-cartridge__block_balanceinfo")))
-        balance_button.click()
+        WebDriverWait(driver, 60).until(
+            EC.presence_of_element_located((By.XPATH,
+                                            "/html/body/div/ui-view/fip-basis-layout-portal-container/div/div/div/main/ui-view[2]/ui-view/fip-basis-layout-account-page/div/div[1]/account-cartridge/div/div[2]/div/extend-cartridge-details/section[2]/div[1]/div[1]/ul/li[1]/div/span"))
+        )
         balance = driver.find_element_by_xpath(
             "/html/body/div/ui-view/fip-basis-layout-portal-container/div/div/div/main/ui-view[2]/ui-view/fip-basis-layout-account-page/div/div[1]/account-cartridge/div/div[2]/div/extend-cartridge-details/section[2]/div[1]/div[1]/ul/li[1]/div/span").get_attribute(
             "innerHTML")
         if balance != "$0.00":
             print(i + " is funded " + balance)
         else:
-            print("")
+            pass
+
 
 
 driver = webdriver.Chrome()
